@@ -374,7 +374,7 @@ export class TextInputElement {
   }
 
   onInit() {
-    this.wrapper.hasValue(this.value);
+    this.wrapper.hasValue(this.getNativeElement().value);
   }
 
   labelledBy(val) {
