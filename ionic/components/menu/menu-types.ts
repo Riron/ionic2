@@ -185,7 +185,9 @@ class MenuOverlayType extends MenuType {
     this.open.add(menuOpen);
 
     let backdropOpen = new Animation(menu.getBackdropElement());
-    backdropOpen.fromTo(OPACITY, 0.01, backdropOpacity);
+    backdropOpen
+      .fromTo(OPACITY, 0.01, backdropOpacity)
+      .fromTo(TRANSLATE_X, '100%', '0%');
     this.open.add(backdropOpen);
 
     let menuClose = new Animation(menu.getMenuElement());
@@ -193,7 +195,9 @@ class MenuOverlayType extends MenuType {
     this.close.add(menuClose);
 
     let backdropClose = new Animation(menu.getBackdropElement());
-    backdropClose.fromTo(OPACITY, backdropOpacity, 0.01);
+    backdropClose
+      .fromTo(OPACITY, backdropOpacity, 0.01)
+      .fromTo(TRANSLATE_X, '0%', '100%');
     this.close.add(backdropClose);
   }
 }
